@@ -17,6 +17,7 @@ A description of the demo goes here *(excerpt)*.
 ## Default tools
 
 - [Gsap](https://gsap.com/)
+- [Lenis](https://github.com/darkroomengineering/lenis)
 - [Vite](https://vite.dev/guide/)
 
 ## Installation
