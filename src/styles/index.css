@@ -9,6 +9,8 @@ body {
     color: var(--color-text);
 }
 
+/* ---------------- Block intro ---------------- */
+
 .block--intro {
     position: relative;
     z-index: 1;
@@ -40,4 +42,84 @@ body {
     font-size: 14rem;
     text-transform: uppercase;
     text-align: center;
+}
+
+/* ---------------- Block main ---------------- */
+
+.block.block--main {
+    height: 575vh;
+}
+
+.block__wrapper {
+    position: sticky;
+    top: 0;
+    padding: 0 24rem;
+    overflow: hidden;
+}
+
+.content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    z-index: 1;
+}
+
+.content__title {
+    width: 924rem;
+    font-family: var(--font-secondary);
+    font-size: 104rem;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+.content__description {
+    width: 455rem;
+    margin-top: 24rem;
+    font-size: 14rem;
+    text-transform: uppercase;
+}
+
+.content__button {
+    margin-top: 32rem;
+    font-size: 14rem;
+    text-transform: uppercase;
+
+    &:hover {
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+}
+
+/* ---------------- Gallery ---------------- */
+
+.gallery {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    width: 736rem;
+}
+
+.gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 32rem;
+    row-gap: 40rem;
+}
+
+.gallery__item {
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+.gallery__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: lightgray;
 }
