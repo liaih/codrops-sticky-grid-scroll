@@ -7,6 +7,64 @@ gsap.registerPlugin(ScrollTrigger)
 
 class StickyGridScroll {
     constructor() {
+        this.getElements()
+
+        this.initContent()
+        this.groupItemsByColumn()
+    }
+
+    /**
+     * Select and store the DOM elements needed for the animation
+     * @returns {void}
+     */
+    getElements() {
+        this.block = document.querySelector(".block--main")
+
+        if (this.block) {
+            this.content = this.block.querySelector(".content")
+            this.title = this.block.querySelector(".content__title")
+            this.description = this.block.querySelector(".content__description")
+            this.button = this.block.querySelector(".content__button")
+            this.items = this.block.querySelectorAll(".gallery__item")
+        }
+    }
+
+    /**
+     * Initializes the visual state of the content before animations
+     * @returns {void}
+     */
+    initContent() {
+        if (this.description && this.button) {
+            // Hide description and button
+            gsap.set([this.description, this.button], { opacity: 0, pointerEvents: "none" })
+        }
+
+        if (this.content && this.title) {
+            // Calculate how many pixels are needed to vertically center the title inside its container
+            const dy = (this.content.offsetHeight - this.title.offsetHeight) / 2
+
+            // Convert this pixel offset into a percentage of the container height
+            this.titleOffsetY = (dy / this.content.offsetHeight) * 100
+
+            // Apply the vertical positioning using percent-based transform
+            gsap.set(this.title, { yPercent: this.titleOffsetY })
+        }
+    }
+
+    /**
+     * Group grid items into a fixed number of columns (default: 3)
+     * @returns {void}
+     */
+    groupItemsByColumn() {
+        this.numColumns = 3
+
+        // Initialize an array for each column
+        this.columns = Array.from({ length: this.numColumns }, () => [])
+
+        // Distribute grid items into column buckets
+        this.items.forEach((item, index) => {
+            this.columns[index % this.numColumns].push(item)
+        })
     }
 }
 
