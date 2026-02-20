@@ -11,6 +11,9 @@ class StickyGridScroll {
 
         this.initContent()
         this.groupItemsByColumn()
+
+        this.addParallaxOnScroll()
+        this.animateTitleOnScroll()
     }
 
     /**
@@ -21,6 +24,7 @@ class StickyGridScroll {
         this.block = document.querySelector(".block--main")
 
         if (this.block) {
+            this.wrapper = this.block.querySelector(".block__wrapper")
             this.content = this.block.querySelector(".content")
             this.title = this.block.querySelector(".content__title")
             this.description = this.block.querySelector(".content__description")
@@ -64,6 +68,52 @@ class StickyGridScroll {
         // Distribute grid items into column buckets
         this.items.forEach((item, index) => {
             this.columns[index % this.numColumns].push(item)
+        })
+    }
+
+    /**
+     * Apply a parallax effect to the wrapper when scrolling
+     * @returns {void}
+     */
+    addParallaxOnScroll() {
+        if (!this.block || !this.wrapper) {
+            return
+        }
+
+        // Create a scroll-driven timeline
+        // Animate the wrapper vertically based on scroll position
+        gsap.from(this.wrapper, {
+            yPercent: -100,
+            ease: "none",
+            scrollTrigger: {
+                trigger: this.block,
+                start: "top bottom", // Start when top of block hits bottom of viewport
+                end: "top top", // End when top of block hits top of viewport
+                scrub: true, // Smooth animation based on scroll position
+            },
+        })
+    }
+
+    /**
+     * Animate the title element when the block scrolls into view
+     * @returns {void}
+     */
+    animateTitleOnScroll() {
+        if (!this.block || !this.title) {
+            return
+        }
+
+        // Create a scroll-driven timeline
+        // Animate the title's opacity when the block reaches 57% of the viewport height
+        gsap.from(this.title, {
+            opacity: 0,
+            duration: 0.7,
+            ease: "power1.out",
+            scrollTrigger: {
+                trigger: this.block,
+                start: "top 57%", // Start when top of block hits 57% of viewport
+                toggleActions: "play none none reset", // Play on enter, reset on leave back
+            },
         })
     }
 }
