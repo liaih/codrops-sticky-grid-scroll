@@ -1,6 +1,6 @@
-# Codrops Template
+# Sticky Grid Scroll
 
-A description of the demo goes here *(excerpt)*.
+Explore a smooth, structured scroll-driven image grid that unfolds gracefully, revealing the content with precision and elegance.
 
 ![Final result](screenshot.jpg)
 
@@ -47,6 +47,8 @@ npm run dev
 ```
 
 ## Credits
+
+- Images sourced from [Lummi](https://www.lummi.ai/)
 
 ## Misc
 
