@@ -25,13 +25,13 @@ Explore a smooth, structured scroll-driven image grid that unfolds gracefully, r
 Clone the repository:
 
 ```
-git clone git@github.com:theoplawinski/codrops-template.git
+git clone git@github.com:theoplawinski/codrops-sticky-grid-scroll.git
 ```
 
 Go to the root:
 
 ```
-cd codrops-template
+cd codrops-sticky-grid-scroll
 ```
 
 Install dependencies:
@@ -54,7 +54,7 @@ npm run dev
 
 Follow Theo: [Instagram](https://instagram.com/theoplawinski), [LinkedIn](https://linkedin.com/in/theoplawinski), [GitHub](https://github.com/theoplawinski)
 
-Follow Codrops: [X](http://www.x.com/codrops), [Facebook](http://www.facebook.com/codrops), [Instagram](https://www.instagram.com/codropsss/), [LinkedIn](https://www.linkedin.com/company/codrops/), [GitHub](https://github.com/codrops) 
+Follow Codrops: [X](http://www.x.com/codrops), [Facebook](http://www.facebook.com/codrops), [Instagram](https://www.instagram.com/codropsss/), [LinkedIn](https://www.linkedin.com/company/codrops/), [GitHub](https://github.com/codrops)
 
 ## License
 

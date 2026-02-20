@@ -4,7 +4,7 @@ import { defineConfig } from "vite"
 export default defineConfig({
     base: "./",
     root: "src/",
-    publicDir: "../static",
+    publicDir: "../public",
     server: {
         host: true, // Open to local network and display URL
         open: true, // Open in browser on development server start
