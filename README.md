@@ -1,6 +1,6 @@
 # Sticky Grid Scroll
 
-Explore a smooth, structured scroll-driven image grid that unfolds gracefully, revealing the content with precision and elegance.
+A structured scroll-driven image grid where movement unfolds progressively within a sticky layout.
 
 ![Final result](screenshot.jpg)
 
@@ -48,7 +48,7 @@ npm run dev
 
 ## Credits
 
-- Images sourced from [Lummi](https://www.lummi.ai/)
+Images sourced from [Lummi](https://www.lummi.ai/).
 
 ## Misc
 
