@@ -233,7 +233,7 @@ class StickyGridScroll {
             scrollTrigger: {
                 trigger: this.block,
                 start: "top 25%", // Start when top of block hits 25% of viewport
-                end: "bottom bottom+=1500", // End when bottom of block hits bottom+1500px of viewport
+                end: "bottom bottom", // End when bottom of block hits bottom of viewport
                 scrub: true, // Smooth animation based on scroll position
             },
         })
