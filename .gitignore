@@ -1,5 +1,7 @@
 node_modules
 vendor
+dist
+dev-server*.log
 
 .env
 .DS_Store
