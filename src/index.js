@@ -16,12 +16,8 @@ class HeroScroll {
 
         this.groupItemsByColumn()
 
-        if (window.matchMedia("(max-width: 900px)").matches) {
-            this.initMobileState()
-        } else {
-            this.initState()
-            this.animateOnScroll()
-        }
+        this.initState()
+        this.animateOnScroll()
     }
 
     getElements() {
