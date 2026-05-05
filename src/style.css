@@ -932,6 +932,7 @@ section[id] {
 @media (max-width: 768px) {
     .hero-scroll {
         min-height: auto;
+        overflow-x: hidden;
     }
 
     .hero-inner {
@@ -940,7 +941,7 @@ section[id] {
         flex-direction: column;
         width: min(100% - 32px, 1180px);
         min-height: auto;
-        padding: 72px 0 56px;
+        padding: 72px 16px 56px;
         overflow: visible;
     }
 
@@ -954,6 +955,12 @@ section[id] {
         grid-row: auto;
     }
 
+    .hero-intro {
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+
     .hero-media {
         position: relative;
         z-index: 1;
@@ -961,14 +968,30 @@ section[id] {
         grid-column: auto;
         grid-row: auto;
         width: 100%;
-        max-width: 620px;
+        max-width: 680px;
         min-height: auto;
-        margin-top: 34px;
+        margin: 34px auto 0;
         overflow: visible;
+        pointer-events: auto;
     }
 
     .hero-media::before {
         display: none;
+    }
+
+    .hero-media__grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        width: 100%;
+    }
+
+    .hero-media__item {
+        position: relative;
+        width: auto;
+        opacity: 1;
     }
 
     .closing-video-section {
