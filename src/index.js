@@ -140,6 +140,7 @@ function initBridgeCarousel() {
 
     const slides = Array.from(carousel.querySelectorAll(".bridge-carousel__slide"))
     const dots = Array.from(carousel.querySelectorAll(".bridge-carousel__dots button"))
+    const viewport = carousel.querySelector(".bridge-carousel__viewport")
     const prevButton = carousel.querySelector(".bridge-carousel__arrow--prev")
     const nextButton = carousel.querySelector(".bridge-carousel__arrow--next")
     let currentIndex = 0
@@ -168,7 +169,7 @@ function initBridgeCarousel() {
     const stopAutoplay = () => window.clearInterval(autoplayId)
     const startAutoplay = () => {
         stopAutoplay()
-        autoplayId = window.setInterval(goToNextSlide, 4500)
+        autoplayId = window.setInterval(goToNextSlide, 8000)
     }
 
     prevButton?.addEventListener("click", () => {
@@ -192,6 +193,22 @@ function initBridgeCarousel() {
     carousel.addEventListener("mouseleave", startAutoplay)
     carousel.addEventListener("focusin", stopAutoplay)
     carousel.addEventListener("focusout", startAutoplay)
+
+    viewport?.addEventListener("click", (event) => {
+        if (event.target.closest(".bridge-carousel__arrow")) {
+            return
+        }
+
+        stopAutoplay()
+    })
+
+    viewport?.addEventListener("touchstart", (event) => {
+        if (event.target.closest(".bridge-carousel__arrow")) {
+            return
+        }
+
+        stopAutoplay()
+    }, { passive: true })
 
     setActiveSlide(0)
     startAutoplay()
